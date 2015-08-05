@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178B47EB1B7251C1005DA42D /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 178B47EA1B7251C1005DA42D /* tessdata */; };
 		179448E91B724E0400D48AFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 179448E81B724E0400D48AFB /* main.m */; };
 		179448EC1B724E0400D48AFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 179448EB1B724E0400D48AFB /* AppDelegate.m */; };
 		179448EF1B724E0400D48AFB /* iOCR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 179448ED1B724E0400D48AFB /* iOCR.xcdatamodeld */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		021701C5C068C807789970ED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		178B47EA1B7251C1005DA42D /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		179448E31B724E0400D48AFB /* iOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179448E71B724E0400D48AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179448E81B724E0400D48AFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		179448E51B724E0400D48AFB /* iOCR */ = {
 			isa = PBXGroup;
 			children = (
+				178B47EA1B7251C1005DA42D /* tessdata */,
 				179448EA1B724E0400D48AFB /* AppDelegate.h */,
 				179448EB1B724E0400D48AFB /* AppDelegate.m */,
 				179448F01B724E0400D48AFB /* ViewController.h */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				179448F51B724E0400D48AFB /* Main.storyboard in Resources */,
+				178B47EB1B7251C1005DA42D /* tessdata in Resources */,
 				179448FA1B724E0400D48AFB /* LaunchScreen.xib in Resources */,
 				179448F71B724E0400D48AFB /* Images.xcassets in Resources */,
 			);
