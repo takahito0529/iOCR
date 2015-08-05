@@ -15,6 +15,7 @@
 		179448F71B724E0400D48AFB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 179448F61B724E0400D48AFB /* Images.xcassets */; };
 		179448FA1B724E0400D48AFB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179448F81B724E0400D48AFB /* LaunchScreen.xib */; };
 		179449061B724E0400D48AFB /* iOCRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 179449051B724E0400D48AFB /* iOCRTests.m */; };
+		2D2ED773B4B588AAC4D4AFCA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D97654028B766124A919F5E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021701C5C068C807789970ED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		179448E31B724E0400D48AFB /* iOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179448E71B724E0400D48AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179448E81B724E0400D48AFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +44,8 @@
 		179448FF1B724E0400D48AFB /* iOCRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOCRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		179449041B724E0400D48AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179449051B724E0400D48AFB /* iOCRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOCRTests.m; sourceTree = "<group>"; };
+		43F8A05EA9AAC0BFA3A225F6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5D97654028B766124A919F5E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2ED773B4B588AAC4D4AFCA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,8 @@
 				179448E51B724E0400D48AFB /* iOCR */,
 				179449021B724E0400D48AFB /* iOCRTests */,
 				179448E41B724E0400D48AFB /* Products */,
+				6539BA39A7C08603A31F185E /* Pods */,
+				F8F45B07107095CE0F0C5B60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +129,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6539BA39A7C08603A31F185E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				021701C5C068C807789970ED /* Pods.debug.xcconfig */,
+				43F8A05EA9AAC0BFA3A225F6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F8F45B07107095CE0F0C5B60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D97654028B766124A919F5E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 179449091B724E0400D48AFB /* Build configuration list for PBXNativeTarget "iOCR" */;
 			buildPhases = (
+				2BC91387D49A749FA1916BAD /* Check Pods Manifest.lock */,
 				179448DF1B724E0400D48AFB /* Sources */,
 				179448E01B724E0400D48AFB /* Frameworks */,
 				179448E11B724E0400D48AFB /* Resources */,
+				594EB1E8083C7D61CF73453A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +242,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BC91387D49A749FA1916BAD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		594EB1E8083C7D61CF73453A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		179448DF1B724E0400D48AFB /* Sources */ = {
@@ -349,6 +408,7 @@
 		};
 		1794490A1B724E0400D48AFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 021701C5C068C807789970ED /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOCR/Info.plist;
@@ -359,6 +419,7 @@
 		};
 		1794490B1B724E0400D48AFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43F8A05EA9AAC0BFA3A225F6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOCR/Info.plist;
@@ -420,6 +481,7 @@
 				1794490B1B724E0400D48AFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1794490C1B724E0400D48AFB /* Build configuration list for PBXNativeTarget "iOCRTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +490,7 @@
 				1794490E1B724E0400D48AFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
