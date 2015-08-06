@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -13,21 +13,25 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-Vu-4M0">
-                                <rect key="frame" x="10" y="30" width="300" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-Vu-4M0">
+                                <rect key="frame" x="175" y="30" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="fDe-Vp-vIn"/>
+                                    <constraint firstAttribute="width" constant="250" id="uXe-3f-8Tl"/>
+                                </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p8K-XM-lbn">
-                                <rect key="frame" x="10" y="250" width="300" height="250"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8K-XM-lbn">
+                                <rect key="frame" x="10" y="290" width="580" height="256"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFq-Ya-Mid">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="rFq-Ya-Mid">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="Lsd-6r-05r">
                                         <connections>
@@ -38,6 +42,17 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rFq-Ya-Mid" secondAttribute="trailing" id="0ZF-nh-7QP"/>
+                            <constraint firstItem="rFq-Ya-Mid" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="BgE-zn-VHt"/>
+                            <constraint firstAttribute="bottom" secondItem="rFq-Ya-Mid" secondAttribute="bottom" id="DoI-vx-WyE"/>
+                            <constraint firstAttribute="trailing" secondItem="p8K-XM-lbn" secondAttribute="trailing" constant="10" id="NFl-61-uym"/>
+                            <constraint firstItem="p8K-XM-lbn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="bVz-9E-ZgZ"/>
+                            <constraint firstItem="UMn-Vu-4M0" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="30" id="dQT-te-kTl"/>
+                            <constraint firstItem="p8K-XM-lbn" firstAttribute="top" secondItem="UMn-Vu-4M0" secondAttribute="bottom" constant="10" id="jGu-oJ-9RM"/>
+                            <constraint firstAttribute="centerX" secondItem="UMn-Vu-4M0" secondAttribute="centerX" id="ppf-w4-7GW"/>
+                            <constraint firstItem="rFq-Ya-Mid" firstAttribute="top" secondItem="p8K-XM-lbn" secondAttribute="bottom" constant="10" id="xcl-8b-O0g"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="UMn-Vu-4M0" id="VW1-fd-ZbW"/>
@@ -46,12 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="463"/>
+            <point key="canvasLocation" x="-144.375" y="422.53521126760563"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

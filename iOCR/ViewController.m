@@ -49,9 +49,11 @@
 // コントローラ終了
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    NSLog(@"didFinishPickingMediaWithInfo");
     // イメージをメモリに保存
     self.selectedImage = [info objectForKey:UIImagePickerControllerEditedImage];
     // イメージビューに画像をセット
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.imageView setImage:self.selectedImage];
     // 親ビューへ戻る
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -68,6 +70,7 @@
     
     // OCR実行
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"OCR実行");
         // 英語 : eng を設定 (日本語の場合は jpn を指定)
         G8Tesseract* tesseract = [[G8Tesseract alloc] initWithLanguage:@"eng"];
         
@@ -83,6 +86,8 @@
             [self.textView setText:[tesseract recognizedText]];
             // インジケータ停止
             [spinner stopAnimating];
+            
+            NSLog(@"textView:%@", [self.textView text]);
         });
     });
 }
